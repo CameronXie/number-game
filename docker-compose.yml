@@ -1,0 +1,12 @@
+version: '3'
+services:
+  node:
+    container_name: number_game_node
+    image: node:16-bullseye
+    volumes:
+      - './game:/var/game'
+    working_dir: '/var/game'
+    command: [ '/bin/sh', '-c', 'tail -f /dev/null' ]
+    restart: always
+    ports:
+      - '3000:3000'
